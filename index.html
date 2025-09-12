@@ -18,21 +18,27 @@
 
     <section class="content">
       <div class="tab-content" id="project">
-        <div class="image-text">
-          <div class="image">IMAGE</div>
-          <div class="text-block">Project Text</div>
-        </div>
-        <div class="bottom-text">Dynamic JavaScript Effects will be here</div>
-        <div class="dynamic-content">
-          <ul>
-            <li>Effect 1: Hover change color</li>
-            <li>Effect 2: Slide toggle</li>
-            <li>Effect 3: Image rotate</li>
-            <li>Effect 4: Typewriter effect</li>
-            <li>Effect 5: Show/hide sections</li>
-          </ul>
-        </div>
-      </div>
+  <div class="image-text">
+    <div class="image effect-image">IMAGE</div>
+    <div class="text-block">
+      <div id="typewriter-text"></div>
+    </div>
+  </div>
+
+  <div class="bottom-text">
+    <button id="toggle-box-btn">Toggle Extra Info</button>
+    <div id="toggle-box" class="hidden-box">
+      This is some extra project information that can be toggled.
+    </div>
+  </div>
+
+  <div class="dynamic-content">
+    <button id="color-change-btn">Hover Over Me</button>
+    <button id="slide-toggle-btn">Slide Toggle Text</button>
+    <div id="slide-box" class="slide-box">Sliding Text Section</div>
+  </div>
+</div>
+
 
       <div class="tab-content" id="personal" style="display: none;">
         <div class="image-text">
