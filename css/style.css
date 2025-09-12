@@ -105,23 +105,26 @@
   transform: rotate(360deg);
 }
 
-/* For hidden toggle box */
+/* Hidden toggle box */
 .hidden-box {
   display: none;
-  margin-top: 10px;
   padding: 10px;
-  border: 1px dashed #999;
+  margin-top: 10px;
+  background: #f4f4f4;
+  border: 1px solid #ccc;
 }
 
-/* Slide effect box */
+/* Slide toggle box */
 .slide-box {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease;
-  background-color: #f2f2f2;
-  padding: 0 10px;
+  background: #f9f9f9;
   margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
 }
+
 
 .slide-box.open {
   max-height: 100px;

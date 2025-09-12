@@ -1,73 +1,81 @@
-document.querySelectorAll('.tab-btn').forEach(button => {
-  button.addEventListener('click', () => {
-    const tabId = button.getAttribute('data-tab');
+// =====================
+// Tab Navigation
+// =====================
+const tabButtons = document.querySelectorAll(".tab-btn");
+const tabContents = document.querySelectorAll(".tab-content");
+
+tabButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const target = button.dataset.tab;
 
     // Hide all tabs
-    document.querySelectorAll('.tab-content').forEach(tab => {
-      tab.style.display = 'none';
+    tabContents.forEach(content => {
+      content.style.display = "none";
     });
 
     // Show selected tab
-    document.getElementById(tabId).style.display = 'block';
+    document.getElementById(target).style.display = "block";
   });
 });
 
-// Tab switching (already included)
-document.querySelectorAll('.tab-btn').forEach(button => {
-  button.addEventListener('click', () => {
-    const tabId = button.getAttribute('data-tab');
+// =====================
+// Typewriter Effect
+// =====================
+const typewriterText = document.getElementById("typewriter-text");
+if (typewriterText) {
+  const text = "This is a typewriter effect typing out text dynamically.";
+  let index = 0;
 
-    // Hide all tabs
-    document.querySelectorAll('.tab-content').forEach(tab => {
-      tab.style.display = 'none';
-    });
-
-    // Show selected tab
-    document.getElementById(tabId).style.display = 'block';
-
-    // Re-run typewriter only if project tab selected
-    if (tabId === "project") {
-      runTypewriter();
-    }
-  });
-});
-
-// Effect 1: Toggle visibility of extra info
-document.getElementById('toggle-box-btn').addEventListener('click', () => {
-  const box = document.getElementById('toggle-box');
-  box.style.display = box.style.display === 'block' ? 'none' : 'block';
-});
-
-// Effect 2: Slide toggle text section
-document.getElementById('slide-toggle-btn').addEventListener('click', () => {
-  const slideBox = document.getElementById('slide-box');
-  slideBox.classList.toggle('open');
-});
-
-// Effect 3: Rotate image on click
-document.querySelector('.effect-image').addEventListener('click', () => {
-  const img = document.querySelector('.effect-image');
-  img.classList.toggle('rotated');
-});
-
-// Effect 4: Typewriter effect
-const typewriterText = "Welcome to my project tab!";
-let typeIndex = 0;
-
-function runTypewriter() {
-  const el = document.getElementById("typewriter-text");
-  el.textContent = "";
-  typeIndex = 0;
-  el.style.width = "0";
-
-  function type() {
-    if (typeIndex < typewriterText.length) {
-      el.textContent += typewriterText.charAt(typeIndex);
-      typeIndex++;
-      el.style.width = `${typeIndex}ch`;
-      setTimeout(type, 100);
+  function typeWriter() {
+    if (index < text.length) {
+      typewriterText.textContent += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 80); // typing speed
     }
   }
 
-  type();
+  typeWriter();
+}
+
+// =====================
+// Toggle Extra Info
+// =====================
+const toggleBtn = document.getElementById("toggle-box-btn");
+const toggleBox = document.getElementById("toggle-box");
+
+if (toggleBtn && toggleBox) {
+  toggleBtn.addEventListener("click", () => {
+    toggleBox.classList.toggle("hidden-box");
+  });
+}
+
+// =====================
+// Hover to Change Color
+// =====================
+const colorChangeBtn = document.getElementById("color-change-btn");
+if (colorChangeBtn) {
+  colorChangeBtn.addEventListener("mouseenter", () => {
+    colorChangeBtn.style.backgroundColor = "lightgreen";
+  });
+  colorChangeBtn.addEventListener("mouseleave", () => {
+    colorChangeBtn.style.backgroundColor = "";
+  });
+}
+
+// =====================
+// Slide Toggle Text
+// =====================
+const slideToggleBtn = document.getElementById("slide-toggle-btn");
+const slideBox = document.getElementById("slide-box");
+
+if (slideToggleBtn && slideBox) {
+  slideToggleBtn.addEventListener("click", () => {
+    if (slideBox.style.maxHeight) {
+      // Hide
+      slideBox.style.maxHeight = null;
+    } else {
+      // Show
+      slideBox.style.maxHeight = slideBox.scrollHeight + "px";
+    }
+  });
 }
