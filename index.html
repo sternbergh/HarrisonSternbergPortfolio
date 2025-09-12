@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Layout Example</title>
+  <title>Tabbed Layout</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,20 +10,45 @@
     <header class="header">HEADER</header>
 
     <nav class="menu">
-      <span>MenuItem 1</span>
-      <span>MenuItem 2</span>
+      <button class="tab-btn" data-tab="project">Project</button>
+      <button class="tab-btn" data-tab="personal">Personal Info</button>
+      <button class="tab-btn" data-tab="about">About Me</button>
     </nav>
 
     <section class="content">
-      <div class="image-text">
-        <div class="image">IMAGE</div>
-        <div class="text-block">TEXTS</div>
+      <div class="tab-content" id="project">
+        <div class="image-text">
+          <div class="image">IMAGE</div>
+          <div class="text-block">Project Text</div>
+        </div>
+        <div class="bottom-text">Dynamic JavaScript Effects will be here</div>
+        <div class="dynamic-content">
+          <ul>
+            <li>Effect 1: Hover change color</li>
+            <li>Effect 2: Slide toggle</li>
+            <li>Effect 3: Image rotate</li>
+            <li>Effect 4: Typewriter effect</li>
+            <li>Effect 5: Show/hide sections</li>
+          </ul>
+        </div>
       </div>
-      <div class="bottom-text">TEXTS</div>
-      <div class="dynamic-content">
-        CONTENT (This part will be switched according to the selection of MenuItem)
+
+      <div class="tab-content" id="personal" style="display: none;">
+        <div class="image-text">
+          <div class="image">PROFILE</div>
+          <div class="text-block">Professional background, skills, experience.</div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="about" style="display: none;">
+        <div class="image-text">
+          <div class="image">HOBBY</div>
+          <div class="text-block">Photography, gaming, club activities, etc.</div>
+        </div>
       </div>
     </section>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

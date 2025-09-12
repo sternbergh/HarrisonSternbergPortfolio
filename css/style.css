@@ -77,3 +77,18 @@
   padding: 10px;
   font-size: 12px;
 }
+
+
+
+.tab-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.tab-btn:hover {
+  text-decoration: underline;
+}
