@@ -58,6 +58,3 @@ function runTypewriter() {
 
   type();
 }
-
-// Optional: Run typewriter on load
-window.addEventListener("DOMContentLoaded", runTypewriter);
